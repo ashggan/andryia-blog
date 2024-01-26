@@ -11,8 +11,8 @@
             <div class=" flex-none gap-x-3">
                 <ul class="menu menu-horizontal  ">
                     <li>
-                        <div class="bg-indigo-700 hover:bg-gray-700  text-white" onclick="my_modal_5.showModal()">
-                            {{ $t('add_post_btn') }}
+                        <div class="bg-indigo-700 hover:bg-gray-700  text-white">
+                            <NuxtLink to="/posts/new">{{ $t('add_post_btn') }} </NuxtLink>
                         </div>
                     </li>
                     <LangSwitch />

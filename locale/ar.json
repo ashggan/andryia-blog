@@ -4,5 +4,8 @@
     "arabic": "العربية",
     "english": "الانجليزية",
     "add_post_btn": " اضافة مقال",
-    "add_post_modal_btn": " اضافة"
+    "add_post_modal_btn": " اضافة",
+    "modal_title": "العنوان",
+    "modal_author": "المؤلف",
+    "modal_body": "المحتوى"
 }

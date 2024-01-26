@@ -8,3 +8,7 @@ export interface Post {
 export interface PostState {
   posts: Post[];
 }
+
+export interface PostStateType {
+  posts: Post[];
+}

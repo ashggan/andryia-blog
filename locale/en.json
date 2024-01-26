@@ -4,5 +4,8 @@
     "arabic": "Arabic",
     "english": "English",
     "add_post_btn": "New Post",
-    "add_post_modal_btn": "Add"
+    "add_post_modal_btn": "Add",
+    "modal_title": "Title",
+    "modal_author": "Author",
+    "modal_body": "content"
 }
