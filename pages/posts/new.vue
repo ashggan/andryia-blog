@@ -28,17 +28,20 @@
 import { useStore } from 'vuex';
 import type { Post } from '~/types/post';
 
+const store = useStore();
+const { locale } = useI18n()
+
+const errMsg = ref('')
 const newPost = {
     id: 0,
     title: '',
     author: '',
-    body: ''
+    body: '',
+    lang: locale.value
 }
-
-const store = useStore();
-
 const post = ref<Post>(newPost)
-const errMsg = ref('')
+const localePath = useLocalePath()
+
 
 const add_post = () => {
     const { title, author, body } = post.value
@@ -48,7 +51,7 @@ const add_post = () => {
     }
     else {
         store.commit('ADD_POST', post.value)
-        useRouter().push("/")
+        useRouter().push(localePath('/'))
     }
 }
 

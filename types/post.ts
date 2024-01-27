@@ -3,6 +3,7 @@ export interface Post {
   title: string;
   author: string;
   body: string;
+  lang?: string;
 }
 
 export interface PostState {
@@ -10,5 +11,9 @@ export interface PostState {
 }
 
 export interface PostStateType {
-  posts: Post[];
+  posts: PostType;
+}
+export interface PostType {
+  en: Post[];
+  ar: Post[];
 }

@@ -1,42 +1,42 @@
 import type { Post, PostStateType } from "~/types/post";
-// import { data } from "~/assets/data.json";
-import { data_ar } from "~/assets/data-ar.json";
-// import { getLocaleCode } from "~/utils/helpers";
-
-// const { locale } = useI18n();
-// const code = getLocaleCode(locale);
+import { data } from "~/assets/posts.json";
 
 const postModule = {
   namespaced: true,
 
   state() {
     return {
-      posts: data_ar,
+      posts: data,
     };
   },
   mutations: {
     ADD_POST(state: PostStateType, post: Post) {
-      post.id = state.posts.length + 1;
-      state.posts = [post, ...state.posts];
+      if (post.lang == "en") {
+        post.id = state.posts.en.length + 1;
+        state.posts.en = [post, ...state.posts.en];
+      } else {
+        post.id = state.posts.ar.length + 1;
+        state.posts.ar = [post, ...state.posts.ar];
+      }
     },
   },
   getters: {
-    getPostById: (state: PostStateType) => (id: string) => {
+    getPostById: (state: PostStateType) => (id: string, lang: string) => {
       const post_id = castToNumber(id);
+      const posts = lang === "en" ? state.posts.en : state.posts.ar;
       if (!post_id) {
         throw new Error("Post not found");
       }
-      const post = state.posts.find((p) => p.id === post_id);
+      const post = posts.find((p) => p.id === post_id);
       if (!post) {
         console.log("Post not found");
         throw createError("Post not found");
       }
       return post;
     },
-    getAll: (state: PostStateType) => state.posts,
-  },
-  actions: {
-    fetchContent: (state: Post) => {},
+    getAll: (state: PostStateType) => (lang: string) => {
+      return lang === "en" ? state.posts.en : state.posts.ar;
+    },
   },
 };
 

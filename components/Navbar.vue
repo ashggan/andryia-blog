@@ -12,7 +12,7 @@
                 <ul class="menu menu-horizontal  ">
                     <li>
                         <div class="bg-indigo-700 hover:bg-gray-700  text-white">
-                            <NuxtLink to="/posts/new">{{ $t('add_post_btn') }} </NuxtLink>
+                            <NuxtLink :to="localePath('/posts/new')">{{ $t('add_post_btn') }} </NuxtLink>
                         </div>
                     </li>
                     <LangSwitch />
