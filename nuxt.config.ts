@@ -1,14 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: false },
-  build: {
-    babel: {
-      plugins: [
-        ['@babel/plugin-transform-modules-commonjs', {
-          allowTopLevelThis: true
-        }]
-      ]
-    }
+  app: {
+    head: {
+      title: "Andriya Blog",
+    },
   },
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n"],
   i18n: {
