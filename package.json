@@ -17,6 +17,9 @@
     "vue": "^3.4.14",
     "vue-router": "^4.2.5"
   },
+  "resolutions": {
+    "string-width": "4.2.3"
+  },
   "dependencies": {
     "vuex": "^4.0.2"
   }
